@@ -1,0 +1,221 @@
+$non-active-color: #c3c3c3fb
+$active-color: #414141fb
+$current-color: #16a084
+$fill-color: rgb(228, 187, 187)
+
+%column-style-div
+    width: 2rem
+    height: 2rem
+    margin: 0
+    padding: 0
+    display: inline-block
+%center
+    display: flex
+    justify-content: center
+    align-items: center
+%hover-effects
+    cursor: pointer
+    color: white
+    background-color: $current-color
+    border-color: $current-color
+%hover-effects-btn
+    cursor: pointer
+    color: $current-color
+    background-color: white
+    border-color: $current-color
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Roboto', sans-serif
+
+button
+    padding: 0.5rem
+    background-color: $current-color
+    text-transform: uppercase
+    border: 1px solid $current-color
+    border-radius: 5rem
+    color: white
+    margin: 1rem
+    &:hover
+        @extend %hover-effects-btn
+        border: 1px solid $current-color
+        border-radius: 5rem
+
+.calendar-container
+    width: 100vw
+    height: 100vh
+    @extend %center
+///                                          Events styling
+.no-events
+    display: none
+.events
+    width: 30%
+    height: 100%
+    margin: 0
+    @extend %center
+    flex-direction: column
+    background-color: $current-color
+    position: relative
+    h3
+        width: 100%
+        font-size: 2.5rem
+        padding: 2rem .5rem
+        color: white
+.events-default-info
+    color: white
+    @extend %center
+    flex-direction: column
+    justify-content: space-around
+    padding: .5rem
+    height: 100%
+    .subline
+        width: 80%
+        height: 70%
+        @extend %center
+        font-size: 1.1rem
+        font-style: italic
+        text-align: center
+        font-weight: bold
+        p
+            border-bottom: 1px solid white
+            padding-bottom: 2rem
+.info
+    text-align: center
+    font-size: .8rem
+    font-style: italic
+    padding: 0.5rem
+    color: white
+    height: 4rem
+    width: 100%
+    // position: absolute
+    // bottom: 0
+    // left: 0
+    // z-index: 2
+
+.event-container
+    padding: 1rem 1rem 0
+    text-align: center
+    background-color: white
+    width: 100%
+    height: 100%
+    flex-direction: column
+    @extend %center
+    border-right: 1px solid $current-color
+.event-date
+    @extend %center
+    flex-direction: column
+.event-year-month
+
+    width: 100%
+.event-day
+    width: 100%
+    font-size: 6rem
+.event-weekday
+    width: 100%
+///                                          Calendar styling
+.calendar
+    background-color: white
+    width: 70%
+    min-height: 50%
+    margin: .5rem auto
+    @extend %center
+    flex-direction: column
+
+//                                          Year elements styling
+.year-select
+    margin: 0 auto
+    width: 50%
+    text-align: center
+    .display-year
+        font-size: 2rem
+        height: 100%
+//                                          Month elements styling
+.month-select
+    width: 80%
+    text-align: center
+    @extend %center
+    .month-select-item
+        width: 4rem
+        padding: 0.2rem 0.5rem
+        margin: 0
+        border-radius: 5%
+        color: $non-active-color
+        @extend %center
+        flex-direction: row
+        &:hover
+            @extend %hover-effects
+        &.current-display-month
+            background-color: $current-color
+            color: white
+        &.current-month
+            border-bottom: 1px solid $current-color
+//                                          Week elements styling
+.week-days-container
+    width: 100%
+    text-align: center
+
+.week-days
+    width: 75%
+    border-bottom: 2px solid #777
+    text-transform: capitalize
+    padding: .5rem
+    margin: 0 auto .5rem
+    & > div
+        @extend %column-style-div
+        background-color: white
+        height: 100%
+        width: 3.2rem
+.week-days-list
+    margin: 0 auto
+    width: 100%
+    height: 100%
+    & > div
+        //Div of according week day name to act as a column container
+        @extend %column-style-div
+        background-color: #ffffff00
+        height: 100%
+        width: 3.2rem
+        div
+            //Actual day divs with value
+            overflow: hidden
+            z-index: 2
+            position: relative
+            @extend %center
+            width: 3rem
+            height: 3rem
+            text-align: center
+            border: 1px solid $active-color
+            color: $active-color
+            border-radius: 50%
+            margin: .2rem auto
+            background-color: #ffffff00
+            z-index: 1
+            //Booked rate span
+            span
+                background-color: $fill-color
+                position: absolute
+                content: ''
+                bottom: 0
+                left: 0
+                width: 100%
+                z-index: -5 !important
+
+            &.current-day
+                border-color: $current-color
+                color: $current-color
+                &:hover
+                    @extend %hover-effects
+            &.selected-day
+                border-color: $current-color
+                color: white
+                background-color: $current-color
+                &:hover
+                    @extend %hover-effects
+            &.other-month
+                border: 1px solid $non-active-color
+                color: $non-active-color
+                &:hover
+                    @extend %hover-effects
+            &:hover
+                @extend %hover-effects

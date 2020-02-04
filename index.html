@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Booker</title>
+  </head>
+  <body>
+    <div class="calendar-container">
+      <div class="events">
+        <h3>Interested in booking an appointment?</h3>
+        <div class="events-default-info">
+          <div class="subline">
+            <p>Check out our bookings calendar!</p>
+          </div>
+          <div class="info">
+            * Fully colored day represents fully booked. Check out everything
+            that isn't fully colored!
+          </div>
+        </div>
+        <div class="event-container no-events">
+          <div class="event-date">
+            <div class="event-year-month"></div>
+            <div class="event-day"></div>
+            <div class="event-weekday"></div>
+          </div>
+          <div class="event-details">
+            <div class="event-info"></div>
+            <div class="event-actions">
+              <button class="event-action">Book an appointment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calendar">
+        <div class="year-select">
+          <button class="prev"><</button>
+          <span class="display-year"></span>
+          <button class="next">></button>
+        </div>
+        <div class="month-select"></div>
+        <div class="week-days-container">
+          <div class="week-days">
+            <div>mon</div>
+            <div>tue</div>
+            <div>wed</div>
+            <div>thur</div>
+            <div>fri</div>
+            <div>sat</div>
+            <div>sun</div>
+          </div>
+          <div class="week-days-list">
+            <div class="week-day" data-weekday="mon"></div>
+            <div class="week-day" data-weekday="tue"></div>
+            <div class="week-day" data-weekday="wed"></div>
+            <div class="week-day" data-weekday="thur"></div>
+            <div class="week-day" data-weekday="fri"></div>
+            <div class="week-day" data-weekday="sat"></div>
+            <div class="week-day" data-weekday="sun"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script defer src="./index.js"></script>
+  </body>
+</html>
